@@ -35,14 +35,16 @@
                     <h2>
                         <span>Task App</span>
                     </h2>
+                    
                     <span flex></span>
-                    <md-button ng-disabled="ctrl.selectedItem == null" ng-click="ctrl.deleteItem()" class="md-icon-button" aria-label="Delete">
+
+                    <md-button ng-disabled="ctrl.selectedItem.length == 0" ng-click="ctrl.deleteItem()" class="md-icon-button" aria-label="Delete">
                         <md-icon> delete </md-icon>
                     </md-button>
                 </div>
             </md-toolbar>
             <md-content class="no-scroll">
-                <md-tabs md-dynamic-height md-border-bottom class="no-scroll">
+                <md-tabs md-dynamic-height md-border-bottom class="no-scroll" md-selected="myTabIndex">
                     <md-tab label="Todo">
                         <custom-list items="ctrl.items" selected-item="ctrl.selectedItem" filter-function="ctrl.notDone"></custom-list>
                     </md-tab>
